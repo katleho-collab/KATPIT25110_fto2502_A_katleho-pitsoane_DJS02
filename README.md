@@ -62,3 +62,11 @@ The component should be designed to **accept podcast data via attributes or prop
   - How to listen for interaction events
 
 ---
+
+## How to Use the Podcast Preview Component
+
+### 1. Include the Component Script
+To use the `<podcast-preview>` custom element, include the following script tag in your HTML file. Ensure the path matches your project structure:
+
+```html
+<script type="module" src="PodcastPreview.js"></script>
