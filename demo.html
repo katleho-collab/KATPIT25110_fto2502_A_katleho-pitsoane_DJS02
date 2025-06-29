@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Podcast Preview Demo</title>
+  <link rel="icon" href="https://www.google.com/favicon.ico" type="image/x-icon"> <!-- Favicon -->
+  <script type="module" src="PodcastPreview.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #f0f0f0; /* Match app background */
+    }
+    .podcast-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
+      padding: 0; /* Align with app styling */
+    }
+    podcast-preview {
+      display: block; /* Ensure proper rendering */
+    }
+  </style>
+</head>
+<body>
+  <h1>Podcast Preview Component Demo</h1>
+  <div class="podcast-grid">
+    <podcast-preview
+      data-id="1"
+      data-image="https://picsum.photos/300/150"
+      data-title="Podcast One"
+      data-genres="Tech, Science"
+      data-seasons="3"
+      data-updated="2023-10-10"
+    ></podcast-preview>
+    <podcast-preview
+      data-id="2"
+      data-image="https://picsum.photos/300/150"
+      data-title="Podcast Two"
+      data-genres="History, Education"
+      data-seasons="2"
+      data-updated="2023-09-15"
+    ></podcast-preview>
+  </div>
+  <script>
+    document.addEventListener('podcast-clicked', (e) => {
+      alert(`Podcast clicked! ID: ${e.detail.id}`);
+    });
+  </script>
+</body>
+</html>

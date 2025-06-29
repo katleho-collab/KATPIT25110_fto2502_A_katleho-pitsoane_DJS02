@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Podcast App</title>
+  <link rel="icon" href="https://www.google.com/favicon.ico" type="image/x-icon"> <!-- Favicon -->
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <img src="assets/microphone-icon.png" alt="PodcastApp Logo"> PodcastApp
+    </div>
+    <div class="icons">
+      <img src="assets/search-icon.png" alt="Search" class="icon">
+      <img src="assets/profile-icon.png" alt="Profile" class="icon">
+    </div>
+  </header>
+
+  <!-- Filter Section -->
+  <div class="filter-section">
+    <span>Filter by:</span>
+    <select id="genre-filter">
+      <!-- Options will be populated dynamically -->
+    </select>
+    <select id="sort-filter">
+      <option value="most-recent">Most Recent First</option>
+      <option value="oldest">Oldest First</option>
+    </select>
+  </div>
+
+  <!-- Podcast Previews Container -->
+  <div id="podcast-container" class="podcast-grid">
+    <!-- JavaScript will populate podcast previews here -->
+  </div>
+
+  <!-- Modal for Podcast Details -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <div class="modal-scrollable">
+        <span id="close-modal" class="close-button">×</span>
+        <div class="modal-header">
+          <h2 id="modal-title"></h2>
+        </div>
+        <div class="modal-body">
+          <img id="modal-image" src="" alt="" class="modal-image">
+          <div class="modal-details">
+            <p><strong>Description</strong></p>
+            <p id="modal-description"></p>
+            <p><strong>Genres</strong></p>
+            <div id="modal-genres"></div>
+            <p><strong>Last updated:</strong> <span id="modal-updated"></span></p>
+          </div>
+        </div>
+        <div class="modal-seasons">
+          <h3>SEASONS</h3>
+          <div id="modal-seasons-list"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script type="module" src="app.js"></script>
+</body>
+</html>

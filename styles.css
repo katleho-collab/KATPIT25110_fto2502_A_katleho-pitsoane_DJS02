@@ -1,0 +1,209 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.logo img {
+  width: 30px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.icons {
+  display: flex;
+  gap: 15px;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+/* Filter Section */
+.filter-section {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px;
+  background-color: transparent;
+}
+
+.filter-section span {
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.filter-section select {
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-right: 10px;
+  cursor: pointer;
+  background-color: #fff;
+  border: 1px solid #ccc;
+}
+
+/* Podcast Grid */
+.podcast-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.podcast {
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.podcast img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover; /* ✅ Fixes image stretching/cutoff */
+  border-radius: 8px;
+}
+
+.podcast h3 {
+  margin: 10px 0;
+  font-size: 1.2em;
+}
+
+.podcast p {
+  margin: 5px 0;
+  color: #666;
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto; /* ✅ Allows full scroll on tall modals */
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: start; /* ✅ Aligns to top for better space */
+  padding: 40px 20px;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: #fff;
+  max-height: 90vh; /* ✅ Limit height for scroll */
+  overflow-y: auto;  /* ✅ Enable inner scrolling */
+  border-radius: 8px;
+  width: 100%;
+  max-width: 800px;
+  position: relative;
+}
+
+.modal-scrollable {
+  padding: 20px;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 1.5em;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.modal-header h2 {
+  margin: 0 0 20px 0;
+  font-size: 1.8em;
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+}
+
+.modal-image {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 20px;
+}
+
+.modal-details {
+  flex: 1;
+}
+
+.modal-details p {
+  margin: 10px 0;
+}
+
+#modal-genres .genre-tag {
+  display: inline-block;
+  background-color: #e0e0e0;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+
+.modal-seasons h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.2em;
+  text-transform: uppercase;
+}
+
+#modal-seasons-list .season {
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .podcast-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-body {
+    flex-direction: column;
+  }
+
+  .modal-image {
+    width: 100%;
+    height: auto;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+}
+
+.hidden {
+  display: none;
+}
